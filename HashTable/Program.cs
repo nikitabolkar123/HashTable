@@ -5,6 +5,7 @@ namespace HashTable
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
             MyMapNode<string, int> hash = new MyMapNode<string, int>(6);
@@ -33,6 +34,13 @@ namespace HashTable
                 hash.Add(element, count);
             }
             Console.WriteLine("Frequency of the word");
+            hash.Display();
+            //remove words avoidable in paragraph
+            int freq = hash.Get("avoidable");
+            Console.WriteLine("Frequency of the word Avoidable: " + freq);
+            hash.Remove("avoidable");
+            freq = hash.Get("avoidable");
+            Console.WriteLine("Frequency of the word Avoidable after removing: " + freq);
             hash.Display();
         }
     }
